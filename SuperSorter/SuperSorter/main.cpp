@@ -7,6 +7,8 @@ void printArray(int arr[], int n);
 
 void heapSort(int arr[], int n);			// main function to do heap sort
 void heapify(int arr[], int n, int i);
+void bubbleSort(int arr[], int n);
+void swap(int *xp, int *yp);
 
 void mergesort(int a[], int l, int h) {
 	if (h - l == 1) {
@@ -93,6 +95,7 @@ int main()
 	cout << "1 - Heap Sort \n";
 	cout << "2 - Quick Sort \n";
 	cout << "3 - Merge Sort \n";
+	cout << "4 - Bubble Sort \n";
 
 	int sw;
 	cin >> sw;
@@ -112,11 +115,16 @@ int main()
 			cout << "\nMergeSort successful! Here's to you: \n";
 			printArray(arr, n);
 			break;
+		case 4:
+			bubbleSort(arr, n);
+			cout << "\nBubbleSort successful! Here's to you: \n";
+			printArray(arr, n);
+			break;
 		default:
 			cout << "\nOops! \n";
 	}
 
-	system("pause");
+	cin.get();
 
 	delete[] arr;
 
@@ -165,4 +173,22 @@ void heapSort(int arr[], int n)
 		// Heapify root element to get highest element at root again
 		heapify(arr, i, 0);
 	}
+}
+void swap(int *xp, int *yp) //swap function 4 bubblesort
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
+}
+
+void bubbleSort(int arr[], int n) //bubblesort
+
+{
+	int i, j;
+	for (i = 0; i < n - 1; i++)
+
+
+		for (j = 0; j < n - i - 1; j++)
+			if (arr[j] > arr[j + 1])
+				swap(&arr[j], &arr[j + 1]);
 }
