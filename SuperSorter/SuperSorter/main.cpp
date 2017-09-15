@@ -124,7 +124,7 @@ int main()
 			cout << "\nOops! \n";
 	}
 
-	cin.get();
+	system("pause");
 
 	delete[] arr;
 
