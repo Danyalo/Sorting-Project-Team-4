@@ -8,6 +8,33 @@ void printArray(int arr[], int n);
 void heapSort(int arr[], int n);			// main function to do heap sort
 void heapify(int arr[], int n, int i);
 
+void quickSort(int arr[], int left, int right) {
+	int i = left, j = right;
+	int tmp;
+	int pivot = arr[(left + right) / 2];
+
+	/* partition */
+	while (i <= j) {
+		while (arr[i] < pivot)
+			i++;
+		while (arr[j] > pivot)
+			j--;
+		if (i <= j) {
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			i++;
+			j--;
+		}
+	};
+
+	/* recursion */
+	if (left < j)
+		quickSort(arr, left, j);
+	if (i < right)
+		quickSort(arr, i, right);
+}
+
 int main()
 {
 	// sup
@@ -21,7 +48,7 @@ int main()
 
 	cout << "Please choose your sorting method:\n";
 	cout << "1 - Heap Sort \n";
-
+	cout << "2 - Quick Sort \n";
 
 	int sw;
 	cin >> sw;
@@ -29,6 +56,11 @@ int main()
 		case 1:
 			heapSort(arr, n);
 			cout << "\nHeapSort successful! Here's to you: \n";
+			printArray(arr, n);
+			break;
+		case 2:
+			quickSort(arr, 0, n - 1);
+			cout << "\nQuickSort successful! Here's to you: \n";
 			printArray(arr, n);
 			break;
 		default:
