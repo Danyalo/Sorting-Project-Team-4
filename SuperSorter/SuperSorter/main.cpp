@@ -100,28 +100,28 @@ int main()
 	int sw;
 	cin >> sw;
 	switch (sw) {
-		case 1:
-			heapSort(arr, n);
-			cout << "\nHeapSort successful! Here's to you: \n";
-			printArray(arr, n);
-			break;
-		case 2:
-			quickSort(arr, 0, n - 1);
-			cout << "\nQuickSort successful! Here's to you: \n";
-			printArray(arr, n);
-			break;
-		case 3:
-			mergesort(arr, n);
-			cout << "\nMergeSort successful! Here's to you: \n";
-			printArray(arr, n);
-			break;
-		case 4:
-			bubbleSort(arr, n);
-			cout << "\nBubbleSort successful! Here's to you: \n";
-			printArray(arr, n);
-			break;
-		default:
-			cout << "\nOops! \n";
+	case 1:
+		heapSort(arr, n);
+		cout << "\nHeapSort successful! Here's to you: \n";
+		printArray(arr, n);
+		break;
+	case 2:
+		quickSort(arr, 0, n - 1);
+		cout << "\nQuickSort successful! Here's to you: \n";
+		printArray(arr, n);
+		break;
+	case 3:
+		mergesort(arr, n);
+		cout << "\nMergeSort successful! Here's to you: \n";
+		printArray(arr, n);
+		break;
+	case 4:
+		bubbleSort(arr, n);
+		cout << "\nBubbleSort successful! Here's to you: \n";
+		printArray(arr, n);
+		break;
+	default:
+		cout << "\nOops! \n";
 	}
 
 	system("pause");
