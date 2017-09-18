@@ -83,7 +83,7 @@ void quickSort(int arr[], int left, int right) {
 int main()
 {
 	// sup
-	cout << "Please enter the number of elemens in array: ";
+	cout << "Enter the number of elemens in array: ";
 	int n;
 	cin >> n;
 	int *arr = new int[n];
