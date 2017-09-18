@@ -10,6 +10,8 @@ void heapify(int arr[], int n, int i);
 void bubbleSort(int arr[], int n);
 void swap(int *xp, int *yp);
 
+int factorial(int n);
+
 void mergesort(int a[], int l, int h) {
 	if (h - l == 1) {
 		if (a[l] > a[h]) {
@@ -96,6 +98,7 @@ int main()
 	cout << "2 - Quick Sort \n";
 	cout << "3 - Merge Sort \n";
 	cout << "4 - Bubble Sort \n";
+	cout << "5 - Factorial of arr[0]";
 
 	int sw;
 	cin >> sw;
@@ -119,6 +122,9 @@ int main()
 		bubbleSort(arr, n);
 		cout << "\nBubbleSort successful! Here's to you: \n";
 		printArray(arr, n);
+		break;
+	case 5:
+		cout << "Hey   " << factorial(arr[0]);
 		break;
 	default:
 		cout << "\nOops! \n";
@@ -191,4 +197,12 @@ void bubbleSort(int arr[], int n) //bubblesort
 		for (j = 0; j < n - i - 1; j++)
 			if (arr[j] > arr[j + 1])
 				swap(&arr[j], &arr[j + 1]);
+}
+
+int factorial(int n)
+{
+	if (n > 1)
+		return n * factorial(n - 1);
+	else
+		return 1;
 }
